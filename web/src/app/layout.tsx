@@ -1,4 +1,5 @@
 import { Providers } from './providers';
+import "@radix-ui/themes/styles.css";
 
 function Layout({ children }: { children: React.ReactNode }) {
     return (

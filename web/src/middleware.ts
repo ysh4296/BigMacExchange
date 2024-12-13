@@ -10,7 +10,7 @@ function getLocale(request: NextRequest): string {
     const acceptLanguage = request.headers.get('accept-language');
     const preferredLocale = acceptLanguage
         ? (acceptLanguage.split(',')[0] as Locale)
-        : 'en-US' as Locale;
+        : ('en-US' as Locale);
     return locales.includes(preferredLocale) ? preferredLocale : 'en-US';
 }
 
@@ -21,7 +21,8 @@ export function middleware(request: NextRequest) {
         (locale) =>
             pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
     );
-    console.log('pathnameHasLocale  ', pathnameHasLocale);
+
+    // 경로에 지원되는 로케일이 있으면 리턴
     if (pathnameHasLocale) return;
 
     // Redirect if there is no locale
@@ -33,10 +34,10 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    // Skip all internal paths (_next)
-    '/((?!_next).*)',
-    // Optional: only run on root (/) URL
-    // '/'
-  ],
-}
+    matcher: [
+        // Skip all internal paths (_next)
+        '/((?!_next).*)',
+        // Optional: only run on root (/) URL
+        // '/'
+    ],
+};
