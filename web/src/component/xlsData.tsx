@@ -22,6 +22,7 @@ export default function Home() {
                 const jsonData = XLSX.utils.sheet_to_json(
                     worksheet
                 ) as unknown[]; // 타입 단언 추가
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 setData(jsonData as any); // 타입 단언 추가
             } catch (error) {
                 console.error('Error reading XLSX file:', error);
@@ -31,7 +32,6 @@ export default function Home() {
         fetchData();
     }, []);
 
-    
     return (
         <div style={{ padding: '1rem' }}>
             <h1>XLSX 데이터 불러오기</h1>
@@ -68,17 +68,19 @@ export default function Home() {
                         <tbody>
                             {data.map((row, rowIndex) => (
                                 <tr key={rowIndex}>
-                                    {Object.values(row).map((value, colIndex) => (
-                                        <td
-                                            key={colIndex}
-                                            style={{
-                                                padding: '0.75rem',
-                                                border: '1px solid #ddd',
-                                            }}
-                                        >
-                                            {value as string}
-                                        </td>
-                                    ))}
+                                    {Object.values(row).map(
+                                        (value, colIndex) => (
+                                            <td
+                                                key={colIndex}
+                                                style={{
+                                                    padding: '0.75rem',
+                                                    border: '1px solid #ddd',
+                                                }}
+                                            >
+                                                {value as string}
+                                            </td>
+                                        )
+                                    )}
                                 </tr>
                             ))}
                         </tbody>

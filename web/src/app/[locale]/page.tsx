@@ -2,7 +2,11 @@ import XLSData from '@/component/xlsData';
 import { getDictionary } from '@/utils/getLocales';
 import { Box, Heading, Text } from '@radix-ui/themes';
 
-export default async function Home({ params }: { params: { locale: Locale } }) {
+export default async function Home({
+    params,
+}: {
+    params: Promise<{ locale: Locale }>;
+}) {
     const { locale } = await params;
     const dict = await getDictionary(locale); // en
 

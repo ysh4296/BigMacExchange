@@ -1,0 +1,13 @@
+{
+  "name": "bigmacexchange",
+  "version": "1.0.0",
+  "description": "man vs burger",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd web && yarn test",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
