@@ -1,3 +1,4 @@
+import XLSData from '@/component/xlsData';
 import { getDictionary } from '@/utils/getLocales';
 import { Box, Heading, Text } from '@radix-ui/themes';
 
@@ -15,6 +16,7 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
         >
             <Heading color="amber">{dict['welcome']}</Heading>
             <Text>hihi</Text>
+            <XLSData />
         </Box>
     );
 }
