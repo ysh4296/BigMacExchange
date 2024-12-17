@@ -1,6 +1,8 @@
-import XLSData from '@/component/xlsData';
+import ConvertBox from '@/component/convertBox';
+import Footer from '@/component/footer';
+import Header from '@/component/header';
 import { getDictionary } from '@/utils/getLocales';
-import { Box, Heading, Text } from '@radix-ui/themes';
+import { Box } from '@radix-ui/themes';
 
 export default async function Home({
     params,
@@ -12,15 +14,19 @@ export default async function Home({
 
     return (
         <Box
-            display={{
-                initial: 'block',
-                // if screen size is greater than 520px, hide the heading
-                xs: 'none',
-            }}
+        // display={{
+        //     initial: 'block',
+        //     // if screen size is greater than 520px, hide the heading
+        //     xs: 'none',
+        // }}
         >
-            <Heading color="amber">{dict['welcome']}</Heading>
-            <Text>hihi</Text>
-            <XLSData />
+            <Header
+                Title={dict['MainTitle']}
+                Description={dict['MainDescription']}
+            />
+            {/* <XLSData /> */}
+            <ConvertBox />
+            <Footer />
         </Box>
     );
 }
