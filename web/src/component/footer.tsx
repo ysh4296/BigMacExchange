@@ -1,7 +1,7 @@
+import { getI18n } from '@/locales/server';
 import { Text } from '@radix-ui/themes';
 
-const Footer = () => {
-    return <Text>Footer</Text>;
-};
-
-export default Footer;
+export default async function Footer() {
+    const t = await getI18n();
+    return <Text>{t('hello')}</Text>;
+}

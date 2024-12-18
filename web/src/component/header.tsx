@@ -1,15 +1,13 @@
 import { Text, Box, Heading } from '@radix-ui/themes';
+import { getI18n } from '@/locales/server';
 
-interface HeaderProps {
-    Title: string;
-    Description: string;
-}
+const Header = async () => {
+    const t = await getI18n();
 
-const Header = (props: HeaderProps) => {
     return (
         <Box as="div">
-            <Heading>{props.Title}</Heading>
-            <Text>{props.Description}</Text>
+            <Heading>{t('MainTitle')}</Heading>
+            <Text>{t('MainDescription')}</Text>
         </Box>
     );
 };
