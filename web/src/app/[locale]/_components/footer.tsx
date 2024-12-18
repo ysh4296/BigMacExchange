@@ -1,3 +1,5 @@
+'server-only';
+
 import { getI18n } from '@/locales/server';
 import { Text } from '@radix-ui/themes';
 

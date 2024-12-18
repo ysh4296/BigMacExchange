@@ -1,6 +1,8 @@
-import ConvertBox from '@/component/convertBox';
-import Footer from '@/component/footer';
-import Header from '@/component/header';
+'server-only';
+
+import ConvertBox from '@/app/[locale]/_components/convertBox';
+import Footer from '@/app/[locale]/_components/footer';
+import Header from '@/app/[locale]/_components/header';
 import { Box } from '@radix-ui/themes';
 
 export default async function Home() {
@@ -13,7 +15,6 @@ export default async function Home() {
         // }}
         >
             <Header />
-            {/* <XLSData /> */}
             <ConvertBox />
             <Footer />
         </Box>
