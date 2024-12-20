@@ -1,11 +1,12 @@
 'use client';
 
-import { Box, Card, Flex, Grid, Text } from '@radix-ui/themes';
+import { Card, Flex, Grid, Text } from '@radix-ui/themes';
 import { useI18n } from '@/locales/client';
 import SelectCountry from '@/component/Input/selectCountry';
 import CurrencyInput from '@/component/Input/currencyInput';
 import { useState } from 'react';
 import useDataStore from '@/store/data';
+import CurrencyText from '@/component/output/currencyText';
 
 export default function ConvertBox() {
     const t = useI18n();
@@ -39,9 +40,53 @@ export default function ConvertBox() {
                         onChange={setAmount}
                     />
                 </Flex>
-                <Box>
+
+                <Flex direction="column" gap="2">
                     <Text>Output</Text>
-                </Box>
+                    <CurrencyText
+                        currency={
+                            data.find(
+                                (item: BigMacData) => item.Country === from
+                            )?.currency_code || ''
+                        }
+                        amount={Number(amount)}
+                    />
+
+                    <CurrencyText
+                        currency={'big mac'}
+                        amount={Math.floor(
+                            Number(amount) /
+                                Number(
+                                    data.find(
+                                        (item: BigMacData) =>
+                                            item.Country === from
+                                    )?.local_price
+                                ) || 1
+                        )}
+                    />
+
+                    <CurrencyText
+                        currency={
+                            data.find((item: BigMacData) => item.Country === to)
+                                ?.currency_code || ''
+                        }
+                        amount={Math.floor(
+                            (Number(amount) /
+                                Number(
+                                    data.find(
+                                        (item: BigMacData) =>
+                                            item.Country === from
+                                    )?.local_price
+                                ) || 1) *
+                                Number(
+                                    data.find(
+                                        (item: BigMacData) =>
+                                            item.Country === to
+                                    )?.local_price
+                                )
+                        )}
+                    />
+                </Flex>
             </Grid>
             <Text>description</Text>
         </Card>
