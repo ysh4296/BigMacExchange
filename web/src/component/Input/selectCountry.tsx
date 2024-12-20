@@ -1,8 +1,9 @@
+import useCountryStore from '@/store/country';
 import { Flex, Select, Text } from '@radix-ui/themes';
 
 interface SelectCountryProps {
     label: string;
-    value: string;
+    value?: string;
     onChange: (value: string) => void;
 }
 
@@ -11,6 +12,8 @@ export default function SelectCountry({
     value,
     onChange,
 }: SelectCountryProps) {
+    const { country } = useCountryStore();
+
     return (
         <Flex
             display="flex"
@@ -28,10 +31,13 @@ export default function SelectCountry({
                 <Select.Content style={{ width: '100%', minHeight: '40px' }}>
                     <Select.Group>
                         <Select.Label>Country</Select.Label>
-                        <Select.Item value="korea">Korea</Select.Item>
-                        <Select.Item value="usa">USA</Select.Item>
-                        <Select.Item value="china">China</Select.Item>
-                        <Select.Item value="japan">Japan</Select.Item>
+                        {country.map((item) => {
+                            return (
+                                <Select.Item key={item} value={item}>
+                                    {item}
+                                </Select.Item>
+                            );
+                        })}
                     </Select.Group>
                 </Select.Content>
             </Select.Root>

@@ -1,10 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import useCountryStore from '@/store/country';
+import useDataStore from '@/store/data';
+import { useEffect } from 'react';
 import * as XLSX from 'xlsx';
 
-export default function Home() {
-    const [data, setData] = useState([]);
+export default function XlsData() {
+    const { data, setData } = useDataStore();
+    const { setCountry } = useCountryStore();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,7 +26,7 @@ export default function Home() {
                     worksheet
                 ) as unknown[]; // 타입 단언 추가
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                setData(jsonData as any); // 타입 단언 추가
+                setData(jsonData as BigMacData[]); // 타입 단언 추가
             } catch (error) {
                 console.error('Error reading XLSX file:', error);
             }
@@ -31,6 +34,11 @@ export default function Home() {
 
         fetchData();
     }, []);
+
+    useEffect(() => {
+        // 국가 데이터 설정
+        setCountry(data.map((item) => item.Country));
+    }, [data]);
 
     return (
         <div style={{ padding: '1rem' }}>

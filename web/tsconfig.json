@@ -21,7 +21,8 @@
         "paths": {
             "@/*": ["./src/*"],
             "@/locales/*": ["./src/locales/*"],
-            "@/utils/*": ["./src/utils/*"]
+            "@/utils/*": ["./src/utils/*"],
+            "@/store/*": ["./src/store/*"]
         }
     },
     "include": [

@@ -3,13 +3,17 @@
 import { Box, Card, Flex, Grid, Text } from '@radix-ui/themes';
 import { useI18n } from '@/locales/client';
 import SelectCountry from '@/component/Input/selectCountry';
+import CurrencyInput from '@/component/Input/currencyInput';
 import { useState } from 'react';
+import useDataStore from '@/store/data';
 
 export default function ConvertBox() {
     const t = useI18n();
+    const { data } = useDataStore();
 
-    const [from, setFrom] = useState<string>('value');
-    const [to, setTo] = useState<string>('value');
+    const [from, setFrom] = useState<string>();
+    const [to, setTo] = useState<string>();
+    const [amount, setAmount] = useState<string>('');
 
     return (
         <Card>
@@ -24,6 +28,16 @@ export default function ConvertBox() {
                         />
                         <SelectCountry label="to" value={to} onChange={setTo} />
                     </Flex>
+
+                    <CurrencyInput
+                        label={
+                            data.find(
+                                (item: BigMacData) => item.Country === from
+                            )?.currency_code || ''
+                        }
+                        value={amount}
+                        onChange={setAmount}
+                    />
                 </Flex>
                 <Box>
                     <Text>Output</Text>

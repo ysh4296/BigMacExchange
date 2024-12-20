@@ -4,7 +4,7 @@ import '@radix-ui/themes/styles.css';
 function Layout({ children }: { children: React.ReactNode }) {
     return (
         <html>
-            <body>
+            <body style={{ margin: '0' }}>
                 <Providers>{children}</Providers>
             </body>
         </html>
