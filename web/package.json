@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "@radix-ui/themes": "^3.1.6",
+        "lucide-react": "^0.468.0",
         "next": "15.1.0",
         "next-international": "0.9.2",
         "react": "^19.0.0",
@@ -28,7 +29,6 @@
         "zustand": "^5.0.2"
     },
     "devDependencies": {
-        "lint-staged": "^15.2.11",
         "@eslint/eslintrc": "^3",
         "@eslint/js": "^9.16.0",
         "@next/eslint-plugin-next": "^15.1.0",
@@ -42,6 +42,7 @@
         "eslint-plugin-react": "^7.37.2",
         "globals": "^15.13.0",
         "husky": "^9.1.7",
+        "lint-staged": "^15.2.11",
         "prettier": "^3.4.2",
         "typescript": "^5",
         "typescript-eslint": "^8.18.0"
