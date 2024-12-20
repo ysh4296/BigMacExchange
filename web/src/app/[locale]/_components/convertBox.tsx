@@ -18,7 +18,12 @@ export default function ConvertBox() {
     const [amount, setAmount] = useState<string>('');
 
     return (
-        <Card m="4" style={{ boxShadow: 'var(--shadow-4)' }}>
+        <Card
+            m="4"
+            style={{
+                boxShadow: 'var(--shadow-4)',
+            }}
+        >
             <Heading my="2">{t('ConvertBox')}</Heading>
             <Grid columns={{ initial: '1', sm: '2' }} gap="3" width="auto">
                 <Flex direction="column" gap="2">
@@ -58,9 +63,9 @@ export default function ConvertBox() {
                     />
                 </Flex>
 
-                <Flex direction="column" gap="2">
+                <Flex direction="column" gap="2" justify="center">
                     <Text>Output</Text>
-                    {from && to && amount && (
+                    {from && to && amount ? (
                         <>
                             <CurrencyText
                                 currency={
@@ -109,6 +114,8 @@ export default function ConvertBox() {
                                 )}
                             />
                         </>
+                    ) : (
+                        <Text>Please select country and amount</Text>
                     )}
                 </Flex>
             </Grid>
