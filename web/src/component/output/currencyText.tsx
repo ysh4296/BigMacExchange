@@ -6,7 +6,9 @@ interface CurrencyTextProps {
 }
 
 const CurrencyText = ({ currency, amount }: CurrencyTextProps) => {
-    return <Text>{`${amount} ${currency}`}</Text>;
+    const formattedAmount = new Intl.NumberFormat('en-US').format(amount);
+
+    return <Text>{`${formattedAmount} ${currency}`}</Text>;
 };
 
 export default CurrencyText;

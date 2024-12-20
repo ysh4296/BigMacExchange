@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Card, Flex, Grid, Text } from '@radix-ui/themes';
+import { Heading, Button, Card, Flex, Grid, Text } from '@radix-ui/themes';
 import { useI18n } from '@/locales/client';
 import SelectCountry from '@/component/Input/selectCountry';
 import CurrencyInput from '@/component/Input/currencyInput';
@@ -18,13 +18,13 @@ export default function ConvertBox() {
     const [amount, setAmount] = useState<string>('');
 
     return (
-        <Card>
-            <Text>{t('ConvertBox')}</Text>
+        <Card m="4" style={{ boxShadow: 'var(--shadow-4)' }}>
+            <Heading my="2">{t('ConvertBox')}</Heading>
             <Grid columns={{ initial: '1', sm: '2' }} gap="3" width="auto">
                 <Flex direction="column" gap="2">
                     <Flex justify="between" gap="2">
                         <SelectCountry
-                            label="from"
+                            label={t('from')}
                             value={from}
                             onChange={setFrom}
                         />
@@ -41,7 +41,11 @@ export default function ConvertBox() {
                                 <ArrowLeftRight />
                             </Button>
                         </Flex>
-                        <SelectCountry label="to" value={to} onChange={setTo} />
+                        <SelectCountry
+                            label={t('to')}
+                            value={to}
+                            onChange={setTo}
+                        />
                     </Flex>
                     <CurrencyInput
                         label={
@@ -56,52 +60,58 @@ export default function ConvertBox() {
 
                 <Flex direction="column" gap="2">
                     <Text>Output</Text>
-                    <CurrencyText
-                        currency={
-                            data.find(
-                                (item: BigMacData) => item.Country === from
-                            )?.currency_code || ''
-                        }
-                        amount={Number(amount)}
-                    />
-
-                    <CurrencyText
-                        currency={'big mac'}
-                        amount={Math.floor(
-                            Number(amount) /
-                                Number(
+                    {from && to && amount && (
+                        <>
+                            <CurrencyText
+                                currency={
                                     data.find(
                                         (item: BigMacData) =>
                                             item.Country === from
-                                    )?.local_price
-                                ) || 1
-                        )}
-                    />
-
-                    <CurrencyText
-                        currency={
-                            data.find((item: BigMacData) => item.Country === to)
-                                ?.currency_code || ''
-                        }
-                        amount={Math.floor(
-                            (Number(amount) /
-                                Number(
-                                    data.find(
-                                        (item: BigMacData) =>
-                                            item.Country === from
-                                    )?.local_price
-                                ) || 1) *
-                                Number(
+                                    )?.currency_code || ''
+                                }
+                                amount={Number(amount)}
+                            />
+                            <CurrencyText
+                                currency={'big mac'}
+                                amount={Number(
+                                    (
+                                        Number(amount) /
+                                            Number(
+                                                data.find(
+                                                    (item: BigMacData) =>
+                                                        item.Country === from
+                                                )?.local_price
+                                            ) || 1
+                                    ).toFixed(1)
+                                )}
+                            />
+                            <CurrencyText
+                                currency={
                                     data.find(
                                         (item: BigMacData) =>
                                             item.Country === to
-                                    )?.local_price
-                                )
-                        )}
-                    />
+                                    )?.currency_code || ''
+                                }
+                                amount={Math.floor(
+                                    (Number(amount) /
+                                        Number(
+                                            data.find(
+                                                (item: BigMacData) =>
+                                                    item.Country === from
+                                            )?.local_price
+                                        ) || 1) *
+                                        Number(
+                                            data.find(
+                                                (item: BigMacData) =>
+                                                    item.Country === to
+                                            )?.local_price
+                                        )
+                                )}
+                            />
+                        </>
+                    )}
                 </Flex>
             </Grid>
-            <Text>description</Text>
         </Card>
     );
 }

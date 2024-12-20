@@ -9,11 +9,9 @@ import { Box } from '@radix-ui/themes';
 export default async function Home() {
     return (
         <Box
-        // display={{
-        //     initial: 'block',
-        //     // if screen size is greater than 520px, hide the heading
-        //     xs: 'none',
-        // }}
+            style={{
+                backgroundColor: 'var(--gray-2)',
+            }}
         >
             <Header />
             <ConvertBox />

@@ -20,7 +20,7 @@ export default function SelectCountry({
             align="start"
             flexGrow={'1'}
             direction="column"
-            style={{ width: '50%' }}
+            style={{ width: '50%', overflow: 'hidden' }}
         >
             <Text>{label}</Text>
             <Select.Root value={value} onValueChange={onChange} size="3">

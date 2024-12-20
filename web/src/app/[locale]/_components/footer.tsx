@@ -1,9 +1,15 @@
 'server-only';
 
 import { getI18n } from '@/locales/server';
-import { Text } from '@radix-ui/themes';
+import { Flex, Text } from '@radix-ui/themes';
+import IndexDescription from '@/component/description/indexDescription';
 
 export default async function Footer() {
     const t = await getI18n();
-    return <Text>{t('hello')}</Text>;
+    return (
+        <Flex m="4" direction="column" height="100%">
+            <IndexDescription />
+            <Text>{t('hello')}</Text>
+        </Flex>
+    );
 }
