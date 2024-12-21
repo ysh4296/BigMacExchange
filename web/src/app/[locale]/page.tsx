@@ -4,11 +4,13 @@ import ConvertBox from '@/app/[locale]/_components/convertBox';
 import Footer from '@/app/[locale]/_components/footer';
 import Header from '@/app/[locale]/_components/header';
 import XlsData from '@/component/xlsData';
-import { Box } from '@radix-ui/themes';
+import { Flex } from '@radix-ui/themes';
 
 export default async function Home() {
     return (
-        <Box
+        <Flex
+            direction="column"
+            gap="6"
             style={{
                 backgroundColor: 'var(--gray-2)',
             }}
@@ -17,6 +19,6 @@ export default async function Home() {
             <ConvertBox />
             <Footer />
             <XlsData />
-        </Box>
+        </Flex>
     );
 }

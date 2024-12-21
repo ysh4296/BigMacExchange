@@ -2,7 +2,8 @@
 
 import useDataStore from '@/store/data';
 import Marquee from 'react-fast-marquee';
-import { Card, Flex, Text } from '@radix-ui/themes';
+import { Flex } from '@radix-ui/themes';
+import IndexCard from './indexCard';
 
 const shuffleArray = (array: BigMacData[]) => {
     const shuffled = [...array];
@@ -32,51 +33,28 @@ const BigMacIndexMarquee = () => {
             <Marquee speed={20}>
                 <Flex direction="row" gap="2">
                     {shuffledData1.map((item: BigMacData) => (
-                        <Card key={item.Country}>
-                            <Text>{item.Country}</Text>
-                            <Text>
-                                {item.local_price} {item.currency_code}
-                            </Text>
-                        </Card>
+                        <IndexCard key={item.Country} item={item} />
                     ))}
                     {/* 원형 marquee 에 gap유지를 위한 빈공간*/}
                     <div />
                 </Flex>
             </Marquee>
-            <div
-            //5초동안 블러 후 나타남
-            >
-                <Marquee direction="right" speed={20}>
-                    <Flex direction="row" gap="2">
-                        {shuffledData2.map((item: BigMacData) => (
-                            <Card key={item.Country}>
-                                <Text>{item.Country}</Text>
-                                <Text>
-                                    {item.local_price} {item.currency_code}
-                                </Text>
-                            </Card>
-                        ))}
-                        <div />
-                    </Flex>
-                </Marquee>
-            </div>
-            <div
-            //10초동안 블러 후 나타남
-            >
-                <Marquee speed={20}>
-                    <Flex direction="row" gap="2">
-                        {shuffledData3.map((item: BigMacData) => (
-                            <Card key={item.Country}>
-                                <Text>{item.Country}</Text>
-                                <Text>
-                                    {item.local_price} {item.currency_code}
-                                </Text>
-                            </Card>
-                        ))}
-                        <div />
-                    </Flex>
-                </Marquee>
-            </div>
+            <Marquee direction="right" speed={20}>
+                <Flex direction="row" gap="2">
+                    {shuffledData2.map((item: BigMacData) => (
+                        <IndexCard key={item.Country} item={item} />
+                    ))}
+                    <div />
+                </Flex>
+            </Marquee>
+            <Marquee speed={20}>
+                <Flex direction="row" gap="2">
+                    {shuffledData3.map((item: BigMacData) => (
+                        <IndexCard key={item.Country} item={item} />
+                    ))}
+                    <div />
+                </Flex>
+            </Marquee>
         </Flex>
     );
 };

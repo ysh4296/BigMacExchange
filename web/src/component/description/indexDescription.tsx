@@ -14,9 +14,17 @@ const IndexDescription = async () => {
         >
             <Flex direction="column" gap="4" p="4">
                 <Heading>{t('BigMacIndexTitle')}</Heading>
-                <Text as="span" color="gray">
-                    {t('BigMacIndexDescription')}
-                </Text>
+                <Flex direction="column" gap="1">
+                    <Text as="span" color="gray">
+                        {t('BigMacIndexDescription')}
+                    </Text>
+                    <Text as="span" color="gray">
+                        {t('BigMacIndexDescription2')}
+                    </Text>
+                    <Text as="span" color="gray">
+                        {t('BigMacIndexDescription3')}
+                    </Text>
+                </Flex>
             </Flex>
         </Card>
     );

@@ -63,61 +63,86 @@ export default function ConvertBox() {
                     />
                 </Flex>
 
-                <Flex direction="column" gap="2" justify="center">
-                    <Text>Output</Text>
-                    {from && to && amount ? (
-                        <>
-                            <CurrencyText
-                                currency={
-                                    data.find(
-                                        (item: BigMacData) =>
-                                            item.Country === from
-                                    )?.currency_code || ''
-                                }
-                                amount={Number(amount)}
-                            />
-                            <CurrencyText
-                                currency={'big mac'}
-                                amount={Number(
-                                    (
-                                        Number(amount) /
+                <Card
+                    style={{
+                        color: 'var(--gray-12)',
+                        height: '150px',
+                    }}
+                >
+                    <Flex
+                        direction="column"
+                        gap="2"
+                        height="100%"
+                        justify="between"
+                        p="4"
+                    >
+                        {from && to && amount ? (
+                            <>
+                                <CurrencyText
+                                    currency={
+                                        data.find(
+                                            (item: BigMacData) =>
+                                                item.Country === from
+                                        )?.currency_code || ''
+                                    }
+                                    amount={Number(amount)}
+                                />
+                                <CurrencyText
+                                    currency={'Big Mac'}
+                                    amount={Number(
+                                        (
+                                            Number(amount) /
+                                                Number(
+                                                    data.find(
+                                                        (item: BigMacData) =>
+                                                            item.Country ===
+                                                            from
+                                                    )?.local_price
+                                                ) || 1
+                                        ).toFixed(1)
+                                    )}
+                                    delay={600}
+                                />
+                                <CurrencyText
+                                    currency={
+                                        data.find(
+                                            (item: BigMacData) =>
+                                                item.Country === to
+                                        )?.currency_code || ''
+                                    }
+                                    amount={Math.floor(
+                                        (Number(amount) /
                                             Number(
                                                 data.find(
                                                     (item: BigMacData) =>
                                                         item.Country === from
                                                 )?.local_price
-                                            ) || 1
-                                    ).toFixed(1)
-                                )}
-                            />
-                            <CurrencyText
-                                currency={
-                                    data.find(
-                                        (item: BigMacData) =>
-                                            item.Country === to
-                                    )?.currency_code || ''
-                                }
-                                amount={Math.floor(
-                                    (Number(amount) /
-                                        Number(
-                                            data.find(
-                                                (item: BigMacData) =>
-                                                    item.Country === from
-                                            )?.local_price
-                                        ) || 1) *
-                                        Number(
-                                            data.find(
-                                                (item: BigMacData) =>
-                                                    item.Country === to
-                                            )?.local_price
-                                        )
-                                )}
-                            />
-                        </>
-                    ) : (
-                        <Text>Please select country and amount</Text>
-                    )}
-                </Flex>
+                                            ) || 1) *
+                                            Number(
+                                                data.find(
+                                                    (item: BigMacData) =>
+                                                        item.Country === to
+                                                )?.local_price
+                                            )
+                                    )}
+                                    delay={1200}
+                                />
+                            </>
+                        ) : (
+                            <Text
+                                size="6"
+                                align="center"
+                                style={{
+                                    height: '100%',
+                                    alignContent: 'center',
+                                }}
+                                color="gray"
+                            >
+                                Please select country and amount
+                            </Text>
+                        )}
+                    </Flex>
+                </Card>
             </Grid>
         </Card>
     );

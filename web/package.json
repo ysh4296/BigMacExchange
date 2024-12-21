@@ -20,12 +20,14 @@
     },
     "dependencies": {
         "@radix-ui/themes": "^3.1.6",
+        "framer-motion": "^11.15.0",
         "lucide-react": "^0.468.0",
         "next": "15.1.0",
         "next-international": "0.9.2",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-fast-marquee": "^1.6.5",
+        "react-marquee-slider": "^1.1.5",
         "xlsx": "^0.18.5",
         "zustand": "^5.0.2"
     },
