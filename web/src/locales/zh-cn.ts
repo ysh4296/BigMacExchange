@@ -4,7 +4,7 @@ export default {
     welcome: '欢迎',
     MainTitle: 'Big Mac Exchange',
     MainDescription: '通过bigmac比较各国货币的价值！',
-    ConvertBox: '货币转换',
+    Convert: '转换',
     Amount: '金额',
     from: '~从',
     to: '~到',

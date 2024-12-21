@@ -4,7 +4,7 @@ export default {
     welcome: 'Welcome',
     MainTitle: 'Big Mac Exchange',
     MainDescription: 'platform for exchanging currency with Big Macs.',
-    ConvertBox: 'Convert Box',
+    Convert: 'Convert',
     Amount: 'Amount',
     from: '~from',
     to: '~to',

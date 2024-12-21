@@ -36,7 +36,7 @@ export default function ConvertBox() {
                 boxShadow: 'var(--shadow-4)',
             }}
         >
-            <Heading my="2">{t('ConvertBox')}</Heading>
+            <Heading my="2">{t('Convert')}</Heading>
             <Grid columns={{ initial: '1', sm: '2' }} gap="3" width="auto">
                 <Flex direction="column" gap="2">
                     <Flex justify="between" gap="2">

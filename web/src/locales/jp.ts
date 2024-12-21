@@ -4,7 +4,7 @@ export default {
     welcome: 'ようこそ',
     MainTitle: 'Big Mac Exchange',
     MainDescription: 'ビッグマックを通じて各国の通貨の価値を比較しましょう！',
-    ConvertBox: '通貨換算',
+    Convert: '通貨換算',
     Amount: '金額',
     from: '~から',
     to: '~へ',

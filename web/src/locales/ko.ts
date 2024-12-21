@@ -4,7 +4,7 @@ export default {
     welcome: '환영합니다',
     MainTitle: 'Big Mac Exchange',
     MainDescription: '빅맥을 통해 각 화폐의 가치를 확인하세요!',
-    ConvertBox: '환전기',
+    Convert: '환전',
     Amount: '금액',
     from: '~에서',
     to: '~으로',
