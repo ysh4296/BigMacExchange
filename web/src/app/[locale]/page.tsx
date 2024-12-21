@@ -3,7 +3,6 @@
 import ConvertBox from '@/app/[locale]/_components/convertBox';
 import Footer from '@/app/[locale]/_components/footer';
 import Header from '@/app/[locale]/_components/header';
-import XlsData from '@/component/xlsData';
 import { Flex } from '@radix-ui/themes';
 
 export default async function Home() {
@@ -18,7 +17,6 @@ export default async function Home() {
             <Header />
             <ConvertBox />
             <Footer />
-            <XlsData />
         </Flex>
     );
 }

@@ -7,7 +7,7 @@ interface DataStore {
 
 const useDataStore = create<DataStore>((set) => ({
     data: [],
-    setData: (newData) => set({ data: newData }),
+    setData: (newData: BigMacData[]) => set({ data: newData }),
 }));
 
 export default useDataStore;

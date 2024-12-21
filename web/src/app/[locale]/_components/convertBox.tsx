@@ -4,18 +4,30 @@ import { Heading, Button, Card, Flex, Grid, Text } from '@radix-ui/themes';
 import { useI18n } from '@/locales/client';
 import SelectCountry from '@/component/Input/selectCountry';
 import CurrencyInput from '@/component/Input/currencyInput';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useDataStore from '@/store/data';
 import CurrencyText from '@/component/output/currencyText';
 import { ArrowLeftRight } from 'lucide-react';
+import fetchData from '@/utils/getXLSData';
+import useCountryStore from '@/store/country';
 
 export default function ConvertBox() {
     const t = useI18n();
-    const { data } = useDataStore();
+    const { data, setData } = useDataStore();
+    const { setCountry } = useCountryStore();
 
     const [from, setFrom] = useState<string>();
     const [to, setTo] = useState<string>();
     const [amount, setAmount] = useState<string>('');
+
+    useEffect(() => {
+        if (data.length === 0) {
+            fetchData().then(({ data: fdata, country: fcountry }) => {
+                setData(fdata);
+                setCountry(fcountry);
+            });
+        }
+    }, [data]);
 
     return (
         <Card

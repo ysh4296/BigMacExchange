@@ -22,7 +22,8 @@
             "@/*": ["./src/*"],
             "@/locales/*": ["./src/locales/*"],
             "@/utils/*": ["./src/utils/*"],
-            "@/store/*": ["./src/store/*"]
+            "@/store/*": ["./src/store/*"],
+            "@/data/*": ["./src/data/*"]
         }
     },
     "include": [
