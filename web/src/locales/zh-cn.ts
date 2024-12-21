@@ -2,7 +2,7 @@ console.log('Loaded ZH-CN');
 
 export default {
     welcome: '欢迎',
-    MainTitle: 'bigmac exchange',
+    MainTitle: 'Big Mac Exchange',
     MainDescription: '通过bigmac比较各国货币的价值！',
     ConvertBox: '货币转换',
     Amount: '金额',
