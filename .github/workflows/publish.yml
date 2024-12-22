@@ -29,5 +29,5 @@ jobs:
           script: |
             sudo docker rm -f $(sudo docker ps -aqf "name=^${{secrets.DOCKERHUB_REPO}}") # 컨테이너 찾아서 종료
             sudo docker pull ${{secrets.DOCKERHUB_USERNAME}}/${{secrets.DOCKERHUB_REPO}}:latest
-            sudo docker run -d -p 8080:3000 --name ${{secrets.DOCKERHUB_REPO}} ${{secrets.DOCKERHUB_USERNAME}}/${{secrets.DOCKERHUB_REPO}}:latest
+            sudo docker run -d -p 8080:3000 --env GOOGLE_ADSENSE_ACCOUNT=${{secrets.GOOGLE_ADSENSE_ACCOUNT}} --name ${{secrets.DOCKERHUB_REPO}} ${{secrets.DOCKERHUB_USERNAME}}/${{secrets.DOCKERHUB_REPO}}:latest
             sudo docker image prune -f
