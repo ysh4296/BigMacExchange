@@ -1,7 +1,7 @@
 'use client';
 
 import { I18nProviderClient } from '@/locales/client';
-import { use } from 'react';
+import { use, useEffect } from 'react';
 
 function Layout({
     params,
@@ -12,6 +12,10 @@ function Layout({
 }) {
     // React.use()를 사용하여 Promise 언래핑
     const { locale } = use(params);
+
+    useEffect(() => {
+        document.documentElement.lang = locale;
+    }, [locale]);
 
     return <I18nProviderClient locale={locale}>{children}</I18nProviderClient>;
 }
