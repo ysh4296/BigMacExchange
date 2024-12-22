@@ -1,4 +1,4 @@
-import { Country } from './country/jp';
+import { Country } from './country/ja';
 
 console.log('Loaded JP');
 
