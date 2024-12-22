@@ -150,7 +150,7 @@ export default function ConvertBox() {
                                 }}
                                 color="gray"
                             >
-                                Please select country and amount
+                                {t('ConvertBoxPlaceholder')}
                             </Text>
                         )}
                     </Flex>

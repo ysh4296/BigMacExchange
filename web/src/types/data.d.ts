@@ -1,5 +1,5 @@
 type BigMacData = {
-    Country: string; // 국가 이름
+    Country: Country; // 국가 이름
     iso_a3: string; // ISO 3자리 국가 코드
     currency_code: string; // 통화 코드
     local_price: number; // 빅맥가격
@@ -18,5 +18,64 @@ type BigMacData = {
     yen_adj_valuation: number; // 엔 환율 조정 평가
     yuan_adj_valuation: number; // 위안 환율 조정 평가
 };
-
-type Country = string;
+type Country =
+    | 'United States'
+    | 'Japan'
+    | 'China'
+    | 'Germany'
+    | 'France'
+    | 'Italy'
+    | 'Spain'
+    | 'United Arab Emirates'
+    | 'Argentina'
+    | 'Australia'
+    | 'Costa Rica'
+    | 'Czech Republic'
+    | 'Denmark'
+    | 'Egypt'
+    | 'Euro area'
+    | 'Azerbaijan'
+    | 'Bahrain'
+    | 'Brazil'
+    | 'Canada'
+    | 'Chile'
+    | 'Colombia'
+    | 'Egypt'
+    | 'India'
+    | 'Indonesia'
+    | 'Israel'
+    | 'Kuwait'
+    | 'Lebanon'
+    | 'Malaysia'
+    | 'Mexico'
+    | 'Pakistan'
+    | 'Peru'
+    | 'Philippines'
+    | 'Poland'
+    | 'Qatar'
+    | 'Saudi Arabia'
+    | 'South Korea'
+    | 'Singapore'
+    | 'South Africa'
+    | 'Sweden'
+    | 'Switzerland'
+    | 'Thailand'
+    | 'Turkey'
+    | 'Ukraine'
+    | 'Uruguay'
+    | 'Venezuela'
+    | 'Vietnam'
+    | 'Euro area'
+    | 'Britain'
+    | 'Guatemala'
+    | 'Hong Kong'
+    | 'Honduras'
+    | 'Hungary'
+    | 'Jordan'
+    | 'Moldova'
+    | 'Nicaragua'
+    | 'Norway'
+    | 'New Zealand'
+    | 'Oman'
+    | 'Romania'
+    | 'Taiwan';

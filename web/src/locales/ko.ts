@@ -1,7 +1,8 @@
+import { Country } from './country/ko';
+
 console.log('Loaded KO');
 
 export default {
-    welcome: '환영합니다',
     MainTitle: 'Big Mac Exchange',
     MainDescription: '빅맥을 통해 각 화폐의 가치를 확인하세요!',
     Convert: '환전',
@@ -15,4 +16,7 @@ export default {
         '빅맥 가격은 각나의 제도 상황에 따라 다르게 표시될 수 있습니다. 따라서 빅맥 가격은 오직 참고용으로 사용해주세요.',
     BigMacIndexDescription3:
         '빅맥 지수는 이코노믹스에서 제공하는 데이터를 사용하고 있습니다. "2024-07-01" 기준으로 데이터를 사용하고 있습니다.',
+    SelectCountry: '국가를 선택하세요',
+    ConvertBoxPlaceholder: '빅맥을 통해 화폐가치를 확인하세요!',
+    ...Country,
 } as const;

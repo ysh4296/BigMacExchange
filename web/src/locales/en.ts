@@ -1,18 +1,22 @@
+import { Country } from './country/en';
+
 console.log('Loaded EN');
 
 export default {
-    welcome: 'Welcome',
     MainTitle: 'Big Mac Exchange',
-    MainDescription: 'platform for exchanging currency with Big Macs.',
+    MainDescription: 'Check the value of currencies through the Big Mac!',
     Convert: 'Convert',
     Amount: 'Amount',
-    from: '~from',
-    to: '~to',
-    BigMacIndexTitle: 'What is Big Mac Index',
+    from: 'From',
+    to: 'To',
+    BigMacIndexTitle: 'What is the Big Mac Index?',
     BigMacIndexDescription:
-        'The Big Mac Index is a measure of the purchasing power parity (PPP) between two countries. I wanted to compare the currencies and "real prices" of two countries using the Big Mac Index. Wouldn\'t it be useful when traveling abroad or planning a trip!',
+        'The Big Mac Index is a fun indicator that compares the purchasing power of currencies using the price of a Big Mac in each country. Easily compare the "real value" of currencies when preparing for your trip!',
     BigMacIndexDescription2:
-        "The price of Big Mac may vary depending on the country's system. Therefore, the price of Big Mac is for reference only.",
+        'Big Mac prices may vary depending on the institutional conditions of each country. Therefore, Big Mac prices should only be used as a reference.',
     BigMacIndexDescription3:
-        'The Big Mac Index uses data provided by EconoMetrics. The data is based on "2024-07-01".',
+        'The Big Mac Index uses data provided by The Economist as of "2024-07-01."',
+    SelectCountry: 'Select a country',
+    ConvertBoxPlaceholder: 'Check currency values through the Big Mac!',
+    ...Country,
 } as const;

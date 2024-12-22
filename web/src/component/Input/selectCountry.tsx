@@ -1,3 +1,4 @@
+import { useI18n } from '@/locales/client';
 import useCountryStore from '@/store/country';
 import { Flex, Select, Text } from '@radix-ui/themes';
 
@@ -13,7 +14,7 @@ export default function SelectCountry({
     onChange,
 }: SelectCountryProps) {
     const { country } = useCountryStore();
-
+    const t = useI18n();
     return (
         <Flex
             display="flex"
@@ -25,7 +26,7 @@ export default function SelectCountry({
             <Text>{label}</Text>
             <Select.Root value={value} onValueChange={onChange} size="3">
                 <Select.Trigger
-                    placeholder="Select Country"
+                    placeholder={t('SelectCountry')}
                     style={{ width: '100%', minHeight: '40px' }}
                 />
                 <Select.Content style={{ width: '100%', minHeight: '40px' }}>
@@ -34,7 +35,7 @@ export default function SelectCountry({
                         {country.map((item) => {
                             return (
                                 <Select.Item key={item} value={item}>
-                                    {item}
+                                    {t(item)}
                                 </Select.Item>
                             );
                         })}

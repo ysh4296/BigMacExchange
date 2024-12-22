@@ -1,18 +1,22 @@
+import { Country } from './country/jp';
+
 console.log('Loaded JP');
 
 export default {
-    welcome: 'ようこそ',
-    MainTitle: 'Big Mac Exchange',
-    MainDescription: 'ビッグマックを通じて各国の通貨の価値を比較しましょう！',
-    Convert: '通貨換算',
+    MainTitle: 'ビッグマックエクスチェンジ',
+    MainDescription: 'ビッグマックを通じて各通貨の価値を確認しましょう！',
+    Convert: '換算',
     Amount: '金額',
-    from: '~から',
-    to: '~へ',
+    from: 'から',
+    to: 'へ',
     BigMacIndexTitle: 'ビッグマック指数とは？',
     BigMacIndexDescription:
-        'ビッグマック指数は、2つの国の購買力パラダイム（PPP）を測定する指標です。ビッグマックを通じて2つの国の通貨と「実際の価格」を比較しましょう。海外旅行や旅行計画に役立つかもしれません！',
+        'ビッグマック指数は、各国のビッグマック価格を用いて通貨の購買力を比較する面白い指標です。旅行の準備に役立て、二つの通貨の「実際の価値」を一目で確認しましょう！',
     BigMacIndexDescription2:
-        'ビッグマックの価格は各国の制度によって異なる場合があります。そのため、ビッグマックの価格は参考にしてください。',
+        'ビッグマックの価格は各国の制度状況により異なる場合があります。そのため、ビッグマックの価格はあくまで参考用としてご利用ください。',
     BigMacIndexDescription3:
-        'ビッグマック指数はEconoMetricsが提供するデータを使用しています。データは「2024-07-01」を使用しています。',
+        'ビッグマック指数はエコノミストが提供するデータを使用しています。「2024-07-01」基準のデータを使用しています。',
+    SelectCountry: '国を選択してください',
+    ConvertBoxPlaceholder: 'ビッグマックで通貨価値を確認しましょう！',
+    ...Country,
 } as const;

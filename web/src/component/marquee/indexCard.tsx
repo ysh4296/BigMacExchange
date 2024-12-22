@@ -1,13 +1,15 @@
 'use client';
 
+import { useI18n } from '@/locales/client';
 import { Card, Flex, Text } from '@radix-ui/themes';
 
 const IndexCard = ({ item }: { item: BigMacData }) => {
+    const t = useI18n();
     return (
         <Card m="2" style={{ width: '300px', height: '100px' }}>
             <Flex p="2" direction="column" gap="2">
                 <Text size="5" weight="bold">
-                    {item.Country}
+                    {t(item.Country)}
                 </Text>
                 <Flex direction="row" gap="2">
                     <Text as="span" size="3">
