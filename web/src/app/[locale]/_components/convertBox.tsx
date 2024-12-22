@@ -47,6 +47,7 @@ export default function ConvertBox() {
                         />
                         <Flex height="100%" align="center">
                             <Button
+                                aria-label={'swap'}
                                 variant="ghost"
                                 m="4"
                                 onClick={() => {

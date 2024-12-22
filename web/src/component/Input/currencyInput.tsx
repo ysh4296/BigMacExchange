@@ -20,6 +20,7 @@ const CurrencyInput = ({ label, value, onChange }: CurrencyInputProps) => {
         >
             <Text>{t('Amount')}</Text>
             <TextField.Root
+                aria-label={'currencyInput'}
                 value={value}
                 onChange={(e) => {
                     onChange(e.target.value);

@@ -26,6 +26,7 @@ export default function SelectCountry({
             <Text>{label}</Text>
             <Select.Root value={value} onValueChange={onChange} size="3">
                 <Select.Trigger
+                    aria-label={'selectCountry'}
                     placeholder={t('SelectCountry')}
                     style={{ width: '100%', minHeight: '40px' }}
                 />
@@ -34,7 +35,11 @@ export default function SelectCountry({
                         <Select.Label>Country</Select.Label>
                         {country.map((item) => {
                             return (
-                                <Select.Item key={item} value={item}>
+                                <Select.Item
+                                    aria-label={item}
+                                    key={item}
+                                    value={item}
+                                >
                                     {t(item)}
                                 </Select.Item>
                             );
