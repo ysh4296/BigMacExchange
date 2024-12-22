@@ -1,4 +1,4 @@
-import { Country } from './country/zh-cn';
+import { Country } from './country/zh';
 
 console.log('Loaded ZH-CN');
 

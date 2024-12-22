@@ -11,5 +11,8 @@ export const {
     ko: () => import('./ko'),
     en: () => import('./en'),
     jp: () => import('./jp'),
-    'zh-cn': () => import('./zh-cn'),
+    zh: () => import('./zh'),
+    fr: () => import('./fr'),
+    de: () => import('./de'),
+    es: () => import('./es'),
 });
