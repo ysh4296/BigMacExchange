@@ -1,5 +1,5 @@
 import { Country } from './country/ja';
-
+import { Language } from './language/ja';
 console.log('Loaded JP');
 
 export default {
@@ -17,6 +17,8 @@ export default {
     BigMacIndexDescription3:
         'ビッグマック指数はエコノミストが提供するデータを使用しています。「2024-07-01」基準のデータを使用しています。',
     SelectCountry: '国を選択してください',
+    SelectLocale: '言語を選択してください',
     ConvertBoxPlaceholder: 'ビッグマックで通貨価値を確認しましょう！',
     ...Country,
+    ...Language,
 } as const;

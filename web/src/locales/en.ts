@@ -1,4 +1,5 @@
 import { Country } from './country/en';
+import { Language } from './language/en';
 
 console.log('Loaded EN');
 
@@ -17,6 +18,8 @@ export default {
     BigMacIndexDescription3:
         'The Big Mac Index uses data provided by The Economist as of "2024-07-01."',
     SelectCountry: 'Select a country',
+    SelectLocale: 'Select a language',
     ConvertBoxPlaceholder: 'Check currency values through the Big Mac!',
     ...Country,
+    ...Language,
 } as const;

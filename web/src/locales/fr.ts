@@ -1,5 +1,5 @@
 import { Country } from './country/fr';
-
+import { Language } from './language/fr';
 console.log('Loaded FR');
 
 export default {
@@ -17,6 +17,8 @@ export default {
     BigMacIndexDescription3:
         'L’indice Big Mac utilise des données fournies par The Economist. Données en date du « 2024-07-01 ».',
     SelectCountry: 'Sélectionnez un pays',
+    SelectLocale: 'Sélectionnez une langue',
     ConvertBoxPlaceholder: 'Découvrez la valeur des devises grâce au Big Mac !',
     ...Country,
+    ...Language,
 } as const;

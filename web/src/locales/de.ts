@@ -1,5 +1,5 @@
 import { Country } from './country/de';
-
+import { Language } from './language/de';
 console.log('Loaded DE');
 export default {
     MainTitle: 'Big Mac Exchange',
@@ -17,7 +17,9 @@ export default {
     BigMacIndexDescription3:
         'Der Big Mac Index verwendet Daten, die von The Economist bereitgestellt werden. Stand der Daten: „2024-07-01“.',
     SelectCountry: 'Wählen Sie ein Land',
+    SelectLocale: 'Wählen Sie eine Sprache',
     ConvertBoxPlaceholder:
         'Überprüfen Sie den Währungswert anhand des Big Macs!',
     ...Country,
+    ...Language,
 } as const;

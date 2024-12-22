@@ -1,5 +1,5 @@
 import { Country } from './country/ko';
-
+import { Language } from './language/ko';
 console.log('Loaded KO');
 
 export default {
@@ -17,6 +17,8 @@ export default {
     BigMacIndexDescription3:
         '빅맥 지수는 이코노믹스에서 제공하는 데이터를 사용하고 있습니다. "2024-07-01" 기준으로 데이터를 사용하고 있습니다.',
     SelectCountry: '국가를 선택하세요',
+    SelectLocale: '언어를 선택하세요',
     ConvertBoxPlaceholder: '빅맥을 통해 화폐가치를 확인하세요!',
     ...Country,
+    ...Language,
 } as const;

@@ -18,6 +18,7 @@ type BigMacData = {
     yen_adj_valuation: number; // 엔 환율 조정 평가
     yuan_adj_valuation: number; // 위안 환율 조정 평가
 };
+
 type Country =
     | 'United States'
     | 'Japan'
@@ -79,3 +80,5 @@ type Country =
     | 'Oman'
     | 'Romania'
     | 'Taiwan';
+
+type LanguageCode = 'en' | 'ko' | 'ja' | 'zh' | 'de' | 'es' | 'fr';
