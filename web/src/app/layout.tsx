@@ -14,6 +14,18 @@ export async function generateMetadata(): Promise<Metadata> {
             title: t('MainTitle'),
             description: t('MainDescription'),
         },
+        alternates: {
+            canonical: 'https://bigmacexchange.com',
+            languages: {
+                en: 'https://bigmacexchange.com/en',
+                ko: 'https://bigmacexchange.com/ko',
+                ja: 'https://bigmacexchange.com/ja',
+                zh: 'https://bigmacexchange.com/zh',
+                de: 'https://bigmacexchange.com/de',
+                fr: 'https://bigmacexchange.com/fr',
+                es: 'https://bigmacexchange.com/es',
+            },
+        },
     };
 }
 
