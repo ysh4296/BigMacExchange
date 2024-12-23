@@ -1,5 +1,4 @@
 import { Country } from './country/zh';
-import { Language } from './language/zh';
 
 console.log('Loaded ZH-CN');
 
@@ -20,5 +19,4 @@ export default {
     SelectCountry: '请选择国家',
     ConvertBoxPlaceholder: '通过巨无霸了解货币价值！',
     ...Country,
-    ...Language,
 } as const;

@@ -1,5 +1,5 @@
 import { Country } from './country/ko';
-import { Language } from './language/ko';
+
 console.log('Loaded KO');
 
 export default {
@@ -20,5 +20,4 @@ export default {
     SelectLocale: '언어를 선택하세요',
     ConvertBoxPlaceholder: '빅맥을 통해 화폐가치를 확인하세요!',
     ...Country,
-    ...Language,
 } as const;

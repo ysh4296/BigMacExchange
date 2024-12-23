@@ -1,5 +1,6 @@
 'use client';
 
+import { LANGUAGE_RECORD } from '@/constant/language';
 import { LOCALE_LIST } from '@/constant/locale';
 import { useChangeLocale, useCurrentLocale, useI18n } from '@/locales/client';
 import { Flex, Select } from '@radix-ui/themes';
@@ -25,7 +26,7 @@ const SelectLocale = () => {
                 />
                 <Select.Content style={{ minHeight: '40px' }}>
                     <Select.Group>
-                        <Select.Label>Country</Select.Label>
+                        <Select.Label>Language</Select.Label>
                         {LOCALE_LIST.map((item: LanguageCode) => {
                             return (
                                 <Select.Item
@@ -34,7 +35,7 @@ const SelectLocale = () => {
                                     value={item}
                                     disabled={item === currentLocale}
                                 >
-                                    {t(item)}
+                                    {LANGUAGE_RECORD[item]}
                                 </Select.Item>
                             );
                         })}

@@ -1,5 +1,5 @@
 import { Country } from './country/ja';
-import { Language } from './language/ja';
+
 console.log('Loaded JP');
 
 export default {
@@ -20,5 +20,4 @@ export default {
     SelectLocale: '言語を選択してください',
     ConvertBoxPlaceholder: 'ビッグマックで通貨価値を確認しましょう！',
     ...Country,
-    ...Language,
 } as const;

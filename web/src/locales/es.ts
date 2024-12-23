@@ -1,5 +1,4 @@
 import { Country } from './country/es';
-import { Language } from './language/es';
 console.log('Loaded ES');
 
 export default {
@@ -21,5 +20,4 @@ export default {
     ConvertBoxPlaceholder:
         '¡Verifica el valor de la moneda a través del Big Mac!',
     ...Country,
-    ...Language,
 } as const;

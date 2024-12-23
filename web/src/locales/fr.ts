@@ -1,5 +1,5 @@
 import { Country } from './country/fr';
-import { Language } from './language/fr';
+
 console.log('Loaded FR');
 
 export default {
@@ -20,5 +20,4 @@ export default {
     SelectLocale: 'Sélectionnez une langue',
     ConvertBoxPlaceholder: 'Découvrez la valeur des devises grâce au Big Mac !',
     ...Country,
-    ...Language,
 } as const;

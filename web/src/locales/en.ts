@@ -1,5 +1,4 @@
 import { Country } from './country/en';
-import { Language } from './language/en';
 
 console.log('Loaded EN');
 
@@ -21,5 +20,4 @@ export default {
     SelectLocale: 'Select a language',
     ConvertBoxPlaceholder: 'Check currency values through the Big Mac!',
     ...Country,
-    ...Language,
 } as const;

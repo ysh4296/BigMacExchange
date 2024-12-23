@@ -1,5 +1,5 @@
 import { Country } from './country/de';
-import { Language } from './language/de';
+
 console.log('Loaded DE');
 export default {
     MainTitle: 'Big Mac Exchange',
@@ -21,5 +21,4 @@ export default {
     ConvertBoxPlaceholder:
         'Überprüfen Sie den Währungswert anhand des Big Macs!',
     ...Country,
-    ...Language,
 } as const;
