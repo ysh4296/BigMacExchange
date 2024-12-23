@@ -13,7 +13,7 @@ export function middleware(request: NextRequest) {
 export const config = {
     matcher: [
         // Skip all internal paths (_next)
-        '/((?!_next|data|ads).*)',
+        '/((?!_next|data|ads|robots.txt).*)',
         // Optional: only run on root (/) URL
         // '/'
     ],
