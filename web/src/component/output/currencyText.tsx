@@ -48,6 +48,7 @@ const CurrencyText = ({
             <Text
                 size="2" // 텍스트 크기
                 truncate // 길이가 길 경우 말줄임표 처리
+                wrap="wrap"
                 style={{
                     letterSpacing: '0.05em', // 글자 간격
                     textTransform: 'uppercase', // 대문자 변환
@@ -59,7 +60,7 @@ const CurrencyText = ({
                 size="4" // 텍스트 크기
                 color="indigo" // 텍스트 색상
                 weight="bold" // 글꼴 굵기
-                truncate // 길이가 길 경우 말줄임표 처리
+                wrap="wrap"
                 style={{
                     letterSpacing: '0.05em', // 글자 간격
                     textTransform: 'uppercase', // 대문자 변환
@@ -70,6 +71,7 @@ const CurrencyText = ({
             <Text
                 size="2" // 텍스트 크기
                 truncate // 길이가 길 경우 말줄임표 처리
+                wrap="wrap"
                 style={{
                     letterSpacing: '0.05em', // 글자 간격
                     textTransform: 'uppercase', // 대문자 변환

@@ -87,7 +87,7 @@ export default function ConvertBox() {
                         gap="2"
                         height="100%"
                         justify="between"
-                        p="4"
+                        overflow="auto"
                     >
                         {from && to && amount ? (
                             <>
