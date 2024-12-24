@@ -5,12 +5,20 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 interface CurrencyTextProps {
+    prefix?: string;
+    postfix?: string;
     currency: string;
     amount: number;
     delay?: number;
 }
 
-const CurrencyText = ({ currency, amount, delay = 300 }: CurrencyTextProps) => {
+const CurrencyText = ({
+    prefix,
+    postfix,
+    currency,
+    amount,
+    delay = 300,
+}: CurrencyTextProps) => {
     const [currentText, setCurrentText] = useState(`${amount} ${currency}`);
     const [isVisible, setIsVisible] = useState(true);
 
@@ -38,6 +46,16 @@ const CurrencyText = ({ currency, amount, delay = 300 }: CurrencyTextProps) => {
             }}
         >
             <Text
+                size="2" // 텍스트 크기
+                truncate // 길이가 길 경우 말줄임표 처리
+                style={{
+                    letterSpacing: '0.05em', // 글자 간격
+                    textTransform: 'uppercase', // 대문자 변환
+                }}
+            >
+                {prefix}
+            </Text>
+            <Text
                 size="4" // 텍스트 크기
                 color="indigo" // 텍스트 색상
                 weight="bold" // 글꼴 굵기
@@ -48,6 +66,16 @@ const CurrencyText = ({ currency, amount, delay = 300 }: CurrencyTextProps) => {
                 }}
             >
                 {currentText}
+            </Text>
+            <Text
+                size="2" // 텍스트 크기
+                truncate // 길이가 길 경우 말줄임표 처리
+                style={{
+                    letterSpacing: '0.05em', // 글자 간격
+                    textTransform: 'uppercase', // 대문자 변환
+                }}
+            >
+                {postfix}
             </Text>
         </motion.div>
     );

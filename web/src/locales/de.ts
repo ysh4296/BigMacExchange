@@ -1,10 +1,15 @@
 import { Country } from './country/de';
 
 console.log('Loaded DE');
+
 export default {
     MainTitle: 'Big Mac Exchange',
     MainDescription:
         'Überprüfen Sie den Wert von Währungen anhand des Big Macs!',
+    MetaTitle:
+        'Big Mac Exchange - Entdecken Sie den tatsächlichen Wert von Währungen mit dem Big Mac Index',
+    MetaDescription:
+        'Entdecken Sie den tatsächlichen Wert von Währungen mit dem Big Mac Index, indem Sie den Kaufkraftausgleich (PPP) verwenden. Beginnen Sie jetzt Ihre Vergleich!',
     Convert: 'Umrechnen',
     Amount: 'Betrag',
     from: 'Von',
@@ -21,4 +26,10 @@ export default {
     ConvertBoxPlaceholder:
         'Überprüfen Sie den Währungswert anhand des Big Macs!',
     ...Country,
+    fromPrefix: 'in {country}',
+    fromPostfix: 'ist',
+    MacPrefix: 'kann für',
+    MacPostfix: 'in Macdonalds gekauft werden',
+    toPrefix: 'gleich {country} zu',
+    toPostfix: ' ',
 } as const;

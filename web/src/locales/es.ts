@@ -1,9 +1,14 @@
 import { Country } from './country/es';
+
 console.log('Loaded ES');
 
 export default {
     MainTitle: 'Big Mac Exchange',
     MainDescription: '¡Verifica el valor de las monedas a través del Big Mac!',
+    MetaTitle:
+        'Big Mac Exchange - Descubre el valor real de las monedas a través del Índice Big Mac',
+    MetaDescription:
+        'Descubre el valor real de las monedas a través del Índice Big Mac, usando el poder adquisitivo (PPP). ¡Comienza tu comparación ahora!',
     Convert: 'Convertir',
     Amount: 'Cantidad',
     from: 'De',
@@ -19,5 +24,11 @@ export default {
     SelectLocale: 'Selecciona un idioma',
     ConvertBoxPlaceholder:
         '¡Verifica el valor de la moneda a través del Big Mac!',
+    fromPrefix: 'en {country}',
+    fromPostfix: 'es',
+    MacPrefix: 'se puede comprar por',
+    MacPostfix: 'en Macdonalds',
+    toPrefix: 'igual a {country} a',
+    toPostfix: ' ',
     ...Country,
 } as const;

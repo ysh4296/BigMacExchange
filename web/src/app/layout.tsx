@@ -7,8 +7,8 @@ import GoogleAdsense from './googleAdsense';
 export async function generateMetadata(): Promise<Metadata> {
     const t = await getI18n();
     return {
-        title: t('MainTitle'),
-        description: t('MainDescription'),
+        title: t('MetaTitle'),
+        description: t('MetaDescription'),
         openGraph: {
             url: 'https://bigmacexchange.com',
             title: t('MainTitle'),

@@ -3,8 +3,11 @@ import { Country } from './country/ko';
 console.log('Loaded KO');
 
 export default {
-    MainTitle: 'Big Mac Exchange',
+    MainTitle: '빅맥 환산기',
     MainDescription: '빅맥을 통해 각 화폐의 가치를 확인하세요!',
+    MetaTitle: '빅맥 교환 - 빅맥 지수 계산기를 통해 실제 화폐 가치 확인하기',
+    MetaDescription:
+        '빅맥 지수 계산기를 사용하여 세계 각 나라의 화폐 실제 가치를 계산하고 비교하세요.',
     Convert: '환전',
     Amount: '금액',
     from: '~에서',
@@ -19,5 +22,11 @@ export default {
     SelectCountry: '국가를 선택하세요',
     SelectLocale: '언어를 선택하세요',
     ConvertBoxPlaceholder: '빅맥을 통해 화폐가치를 확인하세요!',
+    fromPrefix: '{country}에서',
+    fromPostfix: '는',
+    MacPrefix: '맥도날드에서',
+    MacPostfix: '를 살수 있고',
+    toPrefix: '{country}의',
+    toPostfix: '와 동일합니다.',
     ...Country,
 } as const;

@@ -92,6 +92,9 @@ export default function ConvertBox() {
                         {from && to && amount ? (
                             <>
                                 <CurrencyText
+                                    prefix={`${t('fromPrefix', {
+                                        country: t(from as Country),
+                                    })}`}
                                     currency={
                                         data.find(
                                             (item: BigMacData) =>
@@ -99,8 +102,10 @@ export default function ConvertBox() {
                                         )?.currency_code || ''
                                     }
                                     amount={Number(amount)}
+                                    postfix={t('fromPostfix')}
                                 />
                                 <CurrencyText
+                                    prefix={t('MacPrefix')}
                                     currency={'Big Mac'}
                                     amount={Number(
                                         (
@@ -115,8 +120,12 @@ export default function ConvertBox() {
                                         ).toFixed(1)
                                     )}
                                     delay={600}
+                                    postfix={t('MacPostfix')}
                                 />
                                 <CurrencyText
+                                    prefix={`${t('toPrefix', {
+                                        country: t(to as Country),
+                                    })}`}
                                     currency={
                                         data.find(
                                             (item: BigMacData) =>
@@ -139,6 +148,7 @@ export default function ConvertBox() {
                                             )
                                     )}
                                     delay={1200}
+                                    postfix={t('toPostfix')}
                                 />
                             </>
                         ) : (

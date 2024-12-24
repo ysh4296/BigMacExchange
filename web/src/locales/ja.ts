@@ -5,6 +5,10 @@ console.log('Loaded JP');
 export default {
     MainTitle: 'ビッグマックエクスチェンジ',
     MainDescription: 'ビッグマックを通じて各通貨の価値を確認しましょう！',
+    MetaTitle:
+        'ビッグマックエクスチェンジ - ビッグマック指数計算機を使用して通貨の実際の価値を確認',
+    MetaDescription:
+        'ビッグマック指数計算機を使用して、世界各国の通貨の実際の価値を計算し、比較しましょう！',
     Convert: '換算',
     Amount: '金額',
     from: 'から',
@@ -19,5 +23,11 @@ export default {
     SelectCountry: '国を選択してください',
     SelectLocale: '言語を選択してください',
     ConvertBoxPlaceholder: 'ビッグマックで通貨価値を確認しましょう！',
+    fromPrefix: '{country}で',
+    fromPostfix: 'です',
+    MacPrefix: 'で購入できます',
+    MacPostfix: 'マクドナルドで',
+    toPrefix: '{country}への同じ',
+    toPostfix: 'です',
     ...Country,
 } as const;

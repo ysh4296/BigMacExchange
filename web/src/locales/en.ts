@@ -5,6 +5,10 @@ console.log('Loaded EN');
 export default {
     MainTitle: 'Big Mac Exchange',
     MainDescription: 'Check the value of currencies through the Big Mac!',
+    MetaTitle:
+        'Big Mac Exchange - Discover Real Currency Value with the Big Mac Index Calculator',
+    MetaDescription:
+        'Calculate the real value of currencies worldwide with the Big Mac Index Calculator, using purchasing power parity (PPP). Start your comparison now!',
     Convert: 'Convert',
     Amount: 'Amount',
     from: 'From',
@@ -19,5 +23,11 @@ export default {
     SelectCountry: 'Select a country',
     SelectLocale: 'Select a language',
     ConvertBoxPlaceholder: 'Check currency values through the Big Mac!',
+    fromPrefix: 'at {country}',
+    fromPostfix: 'is',
+    MacPrefix: 'can be bought for',
+    MacPostfix: 'at Macdonalds',
+    toPrefix: 'same as {country} to',
+    toPostfix: ' ',
     ...Country,
 } as const;
