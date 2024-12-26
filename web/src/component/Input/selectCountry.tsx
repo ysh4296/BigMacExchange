@@ -6,12 +6,14 @@ interface SelectCountryProps {
     label: string;
     value?: string;
     onChange: (value: string) => void;
+    ariaLabel: string;
 }
 
 export default function SelectCountry({
     label,
     value,
     onChange,
+    ariaLabel,
 }: SelectCountryProps) {
     const { country } = useCountryStore();
     const t = useI18n();
@@ -26,7 +28,7 @@ export default function SelectCountry({
             <Text>{label}</Text>
             <Select.Root value={value} onValueChange={onChange} size="3">
                 <Select.Trigger
-                    aria-label={'selectCountry'}
+                    aria-label={ariaLabel}
                     placeholder={t('SelectCountry')}
                     style={{ width: '100%', minHeight: '40px' }}
                 />

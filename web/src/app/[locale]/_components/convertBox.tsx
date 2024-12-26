@@ -44,6 +44,7 @@ export default function ConvertBox() {
                             label={t('from')}
                             value={from}
                             onChange={setFrom}
+                            ariaLabel={'selectFrom'}
                         />
                         <Flex height="100%" align="center">
                             <Button
@@ -63,6 +64,7 @@ export default function ConvertBox() {
                             label={t('to')}
                             value={to}
                             onChange={setTo}
+                            ariaLabel={'selectTo'}
                         />
                     </Flex>
                     <CurrencyInput
