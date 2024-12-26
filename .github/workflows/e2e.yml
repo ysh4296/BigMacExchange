@@ -1,0 +1,42 @@
+name: E2E test with Cypress
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 소스 코드 체크아웃
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Node.js 설정 (Cypress 실행을 위해 필요)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # 프로젝트에 적합한 Node.js 버전 설정
+
+      # 3. 의존성 설치
+      - name: Install dependencies
+        run: npm ci
+
+      
+      # 3. 의존성 설치
+      - name: Install dependencies
+        run: yarn install
+
+      # 4. 애플리케이션 빌드
+      - name: Build application
+        run: yarn build
+      
+      # 5. 서버가 준비되었는지 확인
+      - name: Wait for server to be ready
+        run: npx wait-on http://localhost:3000
+
+      # 6. Cypress 테스트 실행
+      - name: Run Cypress tests
+        run: npx cypress run
