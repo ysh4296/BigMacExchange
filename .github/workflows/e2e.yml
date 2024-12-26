@@ -28,7 +28,9 @@ jobs:
 
       # 4. 애플리케이션 빌드
       - name: Build application
-        run: yarn build
+        run: |
+          cd web
+          yarn build
       
       # 5. 서버가 준비되었는지 확인
       - name: Wait for server to be ready
