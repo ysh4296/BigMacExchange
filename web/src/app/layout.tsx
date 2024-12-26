@@ -13,6 +13,14 @@ export async function generateMetadata(): Promise<Metadata> {
             url: 'https://bigmacexchange.com',
             title: t('MainTitle'),
             description: t('MainDescription'),
+            images: [
+                {
+                    url: 'https://bigmacexchange.com/favicon.ico',
+                    width: 800,
+                    height: 600,
+                    alt: 'Og Image Alt',
+                },
+            ],
         },
         alternates: {
             canonical: 'https://bigmacexchange.com',

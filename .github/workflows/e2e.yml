@@ -18,20 +18,20 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # 프로젝트에 적합한 Node.js 버전 설정
+          node-version: '20' # 프로젝트에 적합한 Node.js 버전 설정
 
       # 3. 의존성 설치
       - name: Install dependencies
-        run: npm ci
-
-      
-      # 3. 의존성 설치
-      - name: Install dependencies
-        run: yarn install
+        run: |
+          cd web
+          yarn
 
       # 4. 애플리케이션 빌드
       - name: Build application
-        run: yarn build
+        run: |
+          cd web
+          yarn build
+          yarn start &
       
       # 5. 서버가 준비되었는지 확인
       - name: Wait for server to be ready
@@ -39,4 +39,6 @@ jobs:
 
       # 6. Cypress 테스트 실행
       - name: Run Cypress tests
-        run: npx cypress run
+        run: |
+          cd web
+          npx cypress run
