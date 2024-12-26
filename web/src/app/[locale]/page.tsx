@@ -6,7 +6,6 @@ import Header from '@/app/[locale]/_components/header';
 import { Flex } from '@radix-ui/themes';
 
 export default async function Home() {
-    console.log('Home');
     return (
         <Flex
             direction="column"
