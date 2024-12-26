@@ -22,12 +22,9 @@ jobs:
 
       # 3. 의존성 설치
       - name: Install dependencies
-        run: npm ci
-
-      
-      # 3. 의존성 설치
-      - name: Install dependencies
-        run: yarn install
+        run: |
+          cd web
+          yarn
 
       # 4. 애플리케이션 빌드
       - name: Build application
