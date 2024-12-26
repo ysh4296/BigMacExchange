@@ -39,4 +39,6 @@ jobs:
 
       # 6. Cypress 테스트 실행
       - name: Run Cypress tests
-        run: npx cypress run
+        run: |
+          cd web
+          npx cypress run
