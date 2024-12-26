@@ -31,7 +31,7 @@ jobs:
         run: |
           cd web
           yarn build
-          yarn start
+          yarn start &
       
       # 5. 서버가 준비되었는지 확인
       - name: Wait for server to be ready
