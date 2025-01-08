@@ -2,7 +2,7 @@ import { Providers } from './providers';
 import { Metadata } from 'next';
 import '@radix-ui/themes/styles.css';
 import { getI18n } from '@/locales/server';
-import GoogleAdsense from './googleAdsense';
+import Addons from './Addons';
 
 export async function generateMetadata(): Promise<Metadata> {
     const t = await getI18n();
@@ -43,7 +43,7 @@ function Layout({ children }: { children: React.ReactNode }) {
             <body style={{ margin: '0' }}>
                 <Providers>{children}</Providers>
             </body>
-            <GoogleAdsense />
+            <Addons />
         </html>
     );
 }
